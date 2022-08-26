@@ -1,0 +1,209 @@
+[gd_scene load_steps=7 format=1]
+
+[ext_resource path="res://gui/elements_59.png" type="Texture" id=1]
+[ext_resource path="res://gui/elements_76.png" type="Texture" id=2]
+[ext_resource path="res://gui/elements_22.png" type="Texture" id=3]
+[ext_resource path="res://gui/elements_36.png" type="Texture" id=4]
+[ext_resource path="res://gui/elements_50.png" type="Texture" id=5]
+[ext_resource path="res://gui/elements_26.png" type="Texture" id=6]
+
+[node name="gui" type="Control"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 40.0
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+layer = 2
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+scroll/offset = Vector2( 0, 0 )
+scroll/base_offset = Vector2( 0, 0 )
+scroll/base_scale = Vector2( 1, 1 )
+scroll/limit_begin = Vector2( 0, 0 )
+scroll/limit_end = Vector2( 0, 0 )
+scroll/ignore_camera_zoom = true
+
+[node name="TextureFrame" type="TextureFrame" parent="ParallaxBackground"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 779.0
+margin/bottom = 35.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 0
+
+[node name="life1" type="TextureFrame" parent="ParallaxBackground/TextureFrame"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 10.0
+margin/top = 10.0
+margin/right = 30.0
+margin/bottom = 30.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 0
+
+[node name="life2" type="TextureFrame" parent="ParallaxBackground/TextureFrame"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 50.0
+margin/top = 10.0
+margin/right = 70.0
+margin/bottom = 30.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 0
+
+[node name="life3" type="TextureFrame" parent="ParallaxBackground/TextureFrame"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 30.0
+margin/top = 10.0
+margin/right = 50.0
+margin/bottom = 30.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 0
+
+[node name="rest_life" type="Label" parent="ParallaxBackground/TextureFrame"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 90.0
+margin/top = 13.0
+margin/right = 130.0
+margin/bottom = 27.0
+custom_colors/font_color = Color( 0.957031, 0.0448608, 0.0448608, 1 )
+text = "200"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="TextureFrame" type="TextureFrame" parent="ParallaxBackground/TextureFrame"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 700.0
+margin/top = 10.0
+margin/right = 740.0
+margin/bottom = 50.0
+texture = ExtResource( 3 )
+stretch_mode = 0
+
+[node name="TextureFrame1" type="TextureFrame" parent="ParallaxBackground/TextureFrame"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 710.0
+margin/top = 10.0
+margin/right = 750.0
+margin/bottom = 50.0
+texture = ExtResource( 3 )
+stretch_mode = 0
+
+[node name="TextureFrame2" type="TextureFrame" parent="ParallaxBackground/TextureFrame"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 720.0
+margin/top = 10.0
+margin/right = 760.0
+margin/bottom = 50.0
+texture = ExtResource( 3 )
+stretch_mode = 0
+
+[node name="rest_arme" type="Label" parent="ParallaxBackground/TextureFrame"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 750.0
+margin/top = 13.0
+margin/right = 790.0
+margin/bottom = 27.0
+custom_colors/font_color = Color( 0.984375, 0.0307617, 0.0307617, 1 )
+text = "500"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="TextureButton" type="TextureButton" parent="ParallaxBackground/TextureFrame"]
+
+rect/scale = Vector2( 0.2, 0.2 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 320.0
+margin/top = 0.0
+margin/right = 466.0
+margin/bottom = 146.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 4 )
+
+[node name="TextureButton1" type="TextureButton" parent="ParallaxBackground/TextureFrame"]
+
+rect/scale = Vector2( 0.2, 0.2 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 350.0
+margin/top = 0.0
+margin/right = 496.0
+margin/bottom = 146.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 5 )
+
+[node name="TextureButton2" type="TextureButton" parent="ParallaxBackground/TextureFrame"]
+
+rect/scale = Vector2( 0.2, 0.2 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 380.0
+margin/top = 0.0
+margin/right = 526.0
+margin/bottom = 146.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 6 )
+
+

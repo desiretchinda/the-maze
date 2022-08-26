@@ -1,0 +1,85 @@
+[gd_scene load_steps=12 format=1]
+
+[ext_resource path="res://player/player.gd" type="Script" id=1]
+[ext_resource path="res://player/elements_62.png" type="Texture" id=2]
+[ext_resource path="res://player/elements_20.png" type="Texture" id=3]
+[ext_resource path="res://player/1.png" type="Texture" id=4]
+[ext_resource path="res://player/2.png" type="Texture" id=5]
+[ext_resource path="res://player/3.png" type="Texture" id=6]
+[ext_resource path="res://player/4.png" type="Texture" id=7]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 12.686, -53.5263, 15.686, -76.5263, 27.686, -25.5263 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -46.314, -33.5263, 12.686, -53.5263, 27.686, -25.5263, 20.686, 72.4737, -59.314, 35.4737, -78.314, 7.47368 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 55.686, 77.4737, 20.686, 72.4737, 27.686, -25.5263, 61.686, -3.52632, 74.686, 27.4737, 74.686, 48.4737, 72.686, 69.4737 )
+
+[sub_resource type="SpriteFrames" id=4]
+
+animations = [ { "frames":[ ExtResource( 2 ) ], "loop":true, "name":"idle", "speed":10.0 }, { "frames":[ ExtResource( 3 ) ], "loop":true, "name":"die", "speed":10.0 }, { "frames":[ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ], "loop":true, "name":"walk", "speed":10.0 } ]
+
+[node name="player" type="KinematicBody2D"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 2 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/1/trigger = false
+shapes/2/shape = SubResource( 3 )
+shapes/2/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/2/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+script/script = ExtResource( 1 )
+speed = 200.0
+life = 10
+weapon = 45
+
+[node name="sprite" type="AnimatedSprite" parent="."]
+
+frames = SubResource( 4 )
+animation = "idle"
+
+[node name="collision" type="CollisionPolygon2D" parent="."]
+
+build_mode = 0
+polygon = Vector2Array( -78.314, 7.47368, -46.314, -33.5263, 12.686, -53.5263, 15.686, -76.5263, 27.686, -25.5263, 61.686, -3.52632, 74.686, 27.4737, 74.686, 48.4737, 72.686, 69.4737, 55.686, 77.4737, 20.686, 72.4737, -59.314, 35.4737 )
+shape_range = Vector2( 0, 2 )
+trigger = false
+
+[node name="camera" type="Camera2D" parent="."]
+
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+drag_margin/h_enabled = true
+drag_margin/v_enabled = true
+smoothing/enable = false
+smoothing/speed = 5.0
+drag_margin/left = 0.2
+drag_margin/top = 0.2
+drag_margin/right = 0.2
+drag_margin/bottom = 0.2
+
+[node name="gun" type="Position2D" parent="."]
+
+transform/pos = Vector2( 18, -90 )
+
+

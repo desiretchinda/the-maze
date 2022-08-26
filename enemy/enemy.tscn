@@ -1,0 +1,105 @@
+[gd_scene load_steps=16 format=1]
+
+[ext_resource path="res://enemy/enemy.gd" type="Script" id=1]
+[ext_resource path="res://enemy/elements_23.png" type="Texture" id=2]
+[ext_resource path="res://enemy/elements_24.png" type="Texture" id=3]
+[ext_resource path="res://enemy/1.png" type="Texture" id=4]
+[ext_resource path="res://enemy/2.png" type="Texture" id=5]
+[ext_resource path="res://enemy/3.png" type="Texture" id=6]
+[ext_resource path="res://enemy/4.png" type="Texture" id=7]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 56.686, 70.474, 46.686, 70.474, 50.686, 0.473999, 71.686, -1.526 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -44.314, 63.474, -63.314, 66.474, -70.314, 0.473999, -50.314, 10.474 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -47.314, -30.526, -50.314, 10.474, -70.314, 0.473999, -73.314, -57.526 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -47.314, -30.526, -73.314, -57.526, -4.314, -70.526, -26.314, -30.526 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 71.686, -1.526, 50.686, 0.473999, 46.686, -33.526, 71.686, -55.526 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -4.314, -70.526, 71.686, -55.526, 46.686, -33.526, 23.686, -30.526, -26.314, -30.526 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -26.314, -30.526, 23.686, -30.526, -0.313995, -13.526 )
+
+[sub_resource type="SpriteFrames" id=8]
+
+animations = [ { "frames":[ ExtResource( 2 ) ], "loop":true, "name":"idle", "speed":10.0 }, { "frames":[ ExtResource( 3 ) ], "loop":true, "name":"die", "speed":5.0 }, { "frames":[ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ], "loop":true, "name":"walk", "speed":10.0 } ]
+
+[node name="enemy" type="KinematicBody2D"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = true
+shapes/1/shape = SubResource( 2 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/1/trigger = true
+shapes/2/shape = SubResource( 3 )
+shapes/2/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/2/trigger = true
+shapes/3/shape = SubResource( 4 )
+shapes/3/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/3/trigger = true
+shapes/4/shape = SubResource( 5 )
+shapes/4/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/4/trigger = true
+shapes/5/shape = SubResource( 6 )
+shapes/5/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/5/trigger = true
+shapes/6/shape = SubResource( 7 )
+shapes/6/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/6/trigger = true
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+script/script = ExtResource( 1 )
+target_path = null
+navigation_path = null
+speed = 100
+life = 10
+degat = 3
+seen_distance = 400000.0
+target_around_distance = 400000.0
+
+[node name="sprite" type="AnimatedSprite" parent="."]
+
+frames = SubResource( 8 )
+animation = "idle"
+
+[node name="collision" type="CollisionPolygon2D" parent="."]
+
+build_mode = 0
+polygon = Vector2Array( -73.314, -57.526, -4.314, -70.526, 71.686, -55.526, 71.686, -1.526, 56.686, 70.474, 46.686, 70.474, 50.686, 0.473999, 46.686, -33.526, 23.686, -30.526, -0.313995, -13.526, -26.314, -30.526, -47.314, -30.526, -50.314, 10.474, -44.314, 63.474, -63.314, 66.474, -70.314, 0.473999 )
+shape_range = Vector2( 0, 6 )
+trigger = true
+
+[node name="ray" type="RayCast2D" parent="."]
+
+enabled = true
+cast_to = Vector2( 0, 70 )
+layer_mask = 1
+type_mask = 15
+
+
